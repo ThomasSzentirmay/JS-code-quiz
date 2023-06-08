@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Quiz</title>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <header>
+        <h1>Quiz Time!</h1>
+    </header>
+
+    <main>
+        <section id="quiz-container">
+            <section id="question-container">
+                <h2 id="question">Question: </h2>
+                <ul id="choices">
+                    <li><button class="choice">Choice 1</button></li>
+                    <li><button class="choice">Choice 2</button></li>
+                    <li><button class="choice">Choice 3</button></li>
+                    <li><button class="choice">Choice 4</button></li>
+                </ul>
+            </section>
+            <section id="time-container">
+                <h2>Time Remaining: <span id="timer">60</span> seconds</h2>
+            </section>
+            <section id="result-container">
+                <p id="result"></p>
+                <input type="text" id="initials" placeholder="Enter Your Initials">
+                <button id="submit">Submit</button>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <button id="start">Start Quiz</button>
+    </footer>
+
+    <script src="./assets/script.js"></script>
+</body>
+</html>
