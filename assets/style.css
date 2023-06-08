@@ -34,6 +34,12 @@ main {
   overflow-y: auto;
 }
 
+#question {
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 40px;
+}
+
 #choices {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -47,6 +53,19 @@ main {
   align-items: center;
 }
 
+.choice {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 15px;
+}
+.choice:hover {
+    background-color: #91DEFF;
+    color: #000000;
+    font-weight: bold;
+    box-shadow: 0 4px 8px 4px #000033;
+    border-radius: 25px;
+}
+
 #result-container {
   display: none;
 }
@@ -56,5 +75,20 @@ footer {
   justify-content: center;
   align-items: center;
   height: 100%;
-  margin-bottom: 65px;
+  position: relative;
+  bottom: 125px;
+}
+
+footer #start {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 25px;
+}
+
+footer #start:hover {
+    background-color: #91DEFF;
+    color: #000000;
+    font-weight: bold;
+    box-shadow: 0 4px 8px 4px #000033;
+    border-radius: 25px;
 }
