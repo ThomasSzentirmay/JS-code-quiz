@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 body {
@@ -24,6 +25,10 @@ header #time-container {
   position: absolute;
   top: 0;
   right: 0;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 25px 15px;
+  font-size: 12px;
 }
 
 main {
