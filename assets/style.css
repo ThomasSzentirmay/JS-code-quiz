@@ -1,9 +1,13 @@
+/* RESETS */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
 }
+
+/* BODY LAYOUT */
 
 body {
   overflow: hidden;
@@ -16,6 +20,8 @@ body {
 header {
   flex-shrink: 0;
 }
+
+/* TIMER */
 
 header #time-container {
   display: flex;
@@ -31,6 +37,8 @@ header #time-container {
   font-size: 12px;
 }
 
+/* MAIN SECTION FLEX LAYOUT */
+
 main {
   flex-grow: 1;
   display: flex;
@@ -38,6 +46,8 @@ main {
   align-items: center;
   overflow-y: auto;
 }
+
+/* QUESTIONS & ANSWERS */
 
 #question {
   margin-bottom: 30px;
@@ -62,18 +72,23 @@ main {
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 15px;
+  font-weight: bold;
 }
 .choice:hover {
-    background-color: #91DEFF;
-    color: #000000;
-    font-weight: bold;
-    box-shadow: 0 4px 8px 4px #000033;
-    border-radius: 25px;
+  background-color: #91deff;
+  color: #000000;
+  font-weight: bold;
+  box-shadow: 0 4px 8px 4px #000033;
+  border-radius: 25px;
 }
+
+/* RESULTS */
 
 #result-container {
   display: none;
 }
+
+/* START BUTTON */
 
 footer {
   display: flex;
@@ -88,12 +103,13 @@ footer #start {
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 25px;
+  font-weight: bold;
 }
 
 footer #start:hover {
-    background-color: #91DEFF;
-    color: #000000;
-    font-weight: bold;
-    box-shadow: 0 4px 8px 4px #000033;
-    border-radius: 25px;
+  background-color: #91deff;
+  color: #000000;
+  font-weight: bolder;
+  box-shadow: 0 4px 8px 4px #000033;
+  border-radius: 25px;
 }
