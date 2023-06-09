@@ -41,7 +41,7 @@ header #time-container {
 
 main {
   flex-grow: 1;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   overflow-y: auto;
@@ -88,25 +88,38 @@ main {
   display: none;
 }
 
-/* START BUTTON */
+/* MESSAGE SECTION */
 
-footer {
+#message-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100%;
-  position: relative;
-  bottom: 125px;
+  justify-content: center;
+  height: 100vh;
 }
 
-footer #start {
+#message-container h1,
+#message-container p {
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#message-container h1 {
+  font-size: 30px;
+  text-shadow: 2px 2px 4px #ffffff;
+}
+
+/* START BUTTON */
+
+#start {
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 25px;
   font-weight: bold;
 }
 
-footer #start:hover {
+#start:hover {
   background-color: #91deff;
   color: #000000;
   font-weight: bolder;

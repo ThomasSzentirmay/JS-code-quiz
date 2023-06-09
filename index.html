@@ -9,12 +9,20 @@
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
+    <!-- MESSAGE SECTION -->
+    <section id="message-container">
+        <h1>Welcome to the Coding Quiz!</h1>
+        <p>Answer 10 JavaScript questions within the time limit to win. <br>Watch out though...each wrong answer takes 5 seconds off!</p>
+        <button id="start">Start Game</button>
+    </section>
+
     <!-- PAGE TITLE IN HEADER -->
     <header>
         <section id="time-container">
             <h2>Time Remaining: <span id="timer">60</span> seconds</h2>
         </section>
     </header>
+
     <!-- MAIN QUIZ SECTION -->
     <main>
         <!-- SECTION CONTAINER CONTAINING ALL INTERACTIVE ELEMENTS -->
@@ -37,10 +45,7 @@
             </section>
         </section>
     </main>
-    <!-- START QUIZ BUTTON -->
-    <footer>
-        <button id="start">Start Quiz</button>
-    </footer>
+
     <!-- LINKED TO SCRIPT.JS -->
     <script src="./assets/script.js"></script>
 </body>
