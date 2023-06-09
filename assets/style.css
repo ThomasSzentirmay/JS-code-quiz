@@ -52,7 +52,7 @@ main {
 #question {
   margin-bottom: 30px;
   text-align: center;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 #choices {
@@ -74,6 +74,7 @@ main {
   border-radius: 15px;
   font-weight: bold;
 }
+
 .choice:hover {
   background-color: #91deff;
   color: #000000;
