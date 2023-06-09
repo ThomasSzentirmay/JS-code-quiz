@@ -85,8 +85,14 @@ main {
 
 /* RESULTS */
 
-#result-container {
+#initials, #submit {
   display: none;
+}
+
+#result {
+  text-align: center;
+  font-size: 25px;
+  margin-top: 50px;
 }
 
 /* MESSAGE SECTION */
