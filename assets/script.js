@@ -31,7 +31,8 @@ var questions = [
         answer: "toLowerCase()",
     },
     {
-        question: 'What is the purpose of the "document.getElementById()" method?',
+        question:
+            'What is the purpose of the "document.getElementById()" method?',
         options: [
             "To retrieve an HTML element based on its class",
             "To retrieve an HTML element based on its ID",
@@ -85,20 +86,24 @@ var questions = [
     },
 ];
 
-var startBtn = document.getElementById("start");
-var messageContainer = document.getElementById("message-container");
-var quizContainer = document.getElementById("quiz-container");
-var timerElement = document.getElementById("timer");
+var startBtn = document.querySelector("#start");
+var messageContainer = document.querySelector("#message-container");
+var quizContainer = document.querySelector("#quiz-container");
+var timerElement = document.querySelector("#timer");
+var timeSection = document.querySelector('#time-container');
 var countdown;
-var questionElement = document.getElementById("question");
-var choicesElement = document.getElementById("choices");
-var resultElement = document.getElementById("result");
+var questionElement = document.querySelector("#question");
+var choicesElement = document.querySelector("#choices");
+var resultElement = document.querySelector("#result");
 var currentQuestionIndex = 0;
 var timer = 90;
+
+timeSection.style.display = "none";
 
 function startGame() {
     messageContainer.style.display = "none";
     document.querySelector("main").style.display = "flex";
+    timeSection.style.display = "block";
     timerElement.textContent = timer;
     countdown = setInterval(function () {
         timer--;
@@ -146,8 +151,8 @@ function checkAnswer(event) {
         }, 1000);
     } else {
         resultElement.textContent = "Wrong!";
-        if (timer > 10) {
-            timer -= 10;
+        if (timer > 5) {
+            timer -= 5;
         } else {
             timer = 0;
         }
