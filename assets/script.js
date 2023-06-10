@@ -96,7 +96,8 @@ var questionElement = document.querySelector("#question");
 var choicesElement = document.querySelector("#choices");
 var resultElement = document.querySelector("#result");
 var currentQuestionIndex = 0;
-var timer = 90;
+var timer = 60;
+var correctAnswers = 0;
 
 timeSection.style.display = "none";
 
@@ -115,6 +116,11 @@ function startGame() {
             endGame();
         }
     }, 1000);
+
+    startBtn.removeEventListener('click', startGame);
+    startBtn.addEventListener('click', restartGame);
+    startBtn.textContent = 'Restart Game';
+
     displayQuestion();
 }
 
@@ -141,6 +147,7 @@ function checkAnswer(event) {
     var currentQuestion = questions[currentQuestionIndex];
     if (selectedChoice === currentQuestion.answer) {
         resultElement.textContent = "Correct!";
+        correctAnswers++;
         setTimeout(function () {
             resultElement.textContent = "";
             currentQuestionIndex++;
@@ -153,8 +160,8 @@ function checkAnswer(event) {
         }, 1000);
     } else {
         resultElement.textContent = "Wrong!";
-        if (timer > 90) {
-            timer -= 90;
+        if (timer > 5) {
+            timer -= 5;
         } else {
             timer = 0;
         }
@@ -196,7 +203,7 @@ function displayEndGameMessage(title, message) {
     var messageElement = endGameSection.querySelector('p');
 
     titleElement.textContent = title;
-    messageElement.textContent = message;
+    messageElement.textContent += " " + message + " You answered " + correctAnswers + " questions correctly.";
 
     endGameSection.style.display = 'block';
 }
@@ -252,30 +259,8 @@ window.addEventListener('DOMContentLoaded', function () {
 
 function restartGame() {
     clearInterval(countdown);
-    currentQuestionIndex = 0;
-    timer = 90;
-    messageContainer.style.display = 'block';
-    quizContainer.style.display = 'none';
-    timeSection.style.display = 'none';
-    resultElement.textContent = '';
-    document.getElementById('initials').style.display = 'none';
-    document.getElementById('submit').style.display = 'none';
-    document.getElementById('end-game-message').style.display = 'none';
-    startBtn.style.display = 'block';
-    startBtn.addEventListener('click', startGame);
-    startBtn.textContent = 'Restart Game';
-
-    messageContainer.style.display = 'flex';
-    messageContainer.style.justifyContent = 'center';
-    messageContainer.style.alignItems = 'center';
-    quizContainer.style.justifyContent = 'center';
-    quizContainer.style.alignItems = 'center';
-
-    displayQuestion();
+    window.location.reload();
 }
 
 var submitBtn = document.getElementById('submit');
 submitBtn.addEventListener('click', logScores);
-
-var restartBtn = document.getElementById('restart');
-restartBtn.addEventListener('click', restartGame);
