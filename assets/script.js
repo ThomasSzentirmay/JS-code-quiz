@@ -152,8 +152,8 @@ function checkAnswer(event) {
         }, 1000);
     } else {
         resultElement.textContent = "Wrong!";
-        if (timer > 5) {
-            timer -= 5;
+        if (timer > 90) {
+            timer -= 90;
         } else {
             timer = 0;
         }
@@ -178,3 +178,31 @@ function endGame() {
     answerResultEl.style.display = 'none';
 
 };
+
+function logScores() {
+    var initialsInput = document.getElementById('initials').value.trim(); 
+    var correctAnswers = currentQuestionIndex; 
+
+    if (initialsInput !== '') {
+
+        var score = {
+            initials: initialsInput,
+            correctAnswers: correctAnswers
+        };
+
+        var scores = JSON.parse(localStorage.getItem('scores')) || [];
+
+        scores.push(score);
+
+        localStorage.setItem('scores', JSON.stringify(scores));
+
+        document.getElementById('initials').value = '';
+
+        console.log('Score logged successfully!');
+    } else {
+        console.log('Please enter your initials!');
+    }
+}
+
+var submitBtn = document.getElementById('submit');
+submitBtn.addEventListener('click', logScores);

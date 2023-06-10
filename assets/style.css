@@ -92,11 +92,13 @@ main {
 
 #initials {
   margin-bottom: 25px;
-  font-size: 22px;
+  padding: 8px 16px;
+  border-radius: 10px;
 }
 
 #submit {
-  padding: 10px 20px;
+  padding: 5px 10px;
+  border-radius: 25px;
 }
 
 .show {
