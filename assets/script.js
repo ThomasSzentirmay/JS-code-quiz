@@ -183,10 +183,23 @@ function endGame() {
     }
 
     if (currentQuestionIndex === questions.length && timer > 0) {
-        timeSection.style.display = 'none';
+        timerElement.style.display = 'none';
+        displayEndGameMessage('You Win!', 'Congratulations! We have a programmer on our hands :)');
+    } else if (timer <= 0) {
+        displayEndGameMessage('Unlucky!', 'Oh well... can always try again :)');
     }
 }
 
+function displayEndGameMessage(title, message) {
+    var endGameSection = document.querySelector('#end-game-message');
+    var titleElement = endGameSection.querySelector('h1');
+    var messageElement = endGameSection.querySelector('p');
+
+    titleElement.textContent = title;
+    messageElement.textContent = message;
+
+    endGameSection.style.display = 'block';
+}
 
 function logScores() {
     var initialsInput = document.getElementById('initials').value.trim();
