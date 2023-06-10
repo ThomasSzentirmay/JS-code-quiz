@@ -56,9 +56,10 @@ body #highscores-container h3 {
 
 main {
   flex-grow: 1;
-  display: none;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   overflow-y: auto;
 }
 
@@ -100,15 +101,20 @@ main {
 
 /* RESULTS */
 
+#result {
+  margin-top: 25px;
+  font-size: 20px;
+}
+
 #initials,
 #submit {
   display: none;
 }
 
 #initials {
-  margin-bottom: 25px;
   padding: 8px 16px;
   border-radius: 10px;
+  margin-bottom: 10px
 }
 
 #submit {
@@ -118,12 +124,6 @@ main {
 
 .show {
   display: block;
-}
-
-#result {
-  text-align: center;
-  font-size: 25px;
-  margin-top: 50px;
 }
 
 /* MESSAGE SECTION */
@@ -168,18 +168,15 @@ main {
 /* END GAME MESSAGE */
 
 #end-game-message {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   margin-bottom: 20px;
-  position: relative;
-  top: 280px;
-}
-
-#end-game-message h1 {
-  font-size: 30px;
-  margin-bottom: 10px;
-}
-
-#end-game-message p {
-  font-size: 26px;
+  z-index: 1;
 }

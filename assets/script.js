@@ -153,8 +153,8 @@ function checkAnswer(event) {
         }, 1000);
     } else {
         resultElement.textContent = "Wrong!";
-        if (timer > 5) {
-            timer -= 5;
+        if (timer > 90) {
+            timer -= 90;
         } else {
             timer = 0;
         }
@@ -218,13 +218,16 @@ function logScores() {
         document.getElementById('initials').value = '';
 
         console.log('Score logged successfully!');
+
+        updateHighScores();
     } else {
         console.log('Please enter your initials!');
     }
 }
 
-window.addEventListener('DOMContentLoaded', function () {
+function updateHighScores() {
     var highscoresList = document.getElementById('highscores-list');
+    highscoresList.innerHTML = '';
 
     var scores = JSON.parse(localStorage.getItem('scores')) || [];
 
@@ -237,7 +240,11 @@ window.addEventListener('DOMContentLoaded', function () {
         listItem.textContent = score.initials + ' - ' + score.correctAnswers + ' correct answers';
         highscoresList.appendChild(listItem);
     });
-});
+}
 
 var submitBtn = document.getElementById('submit');
-submitBtn.addEventListener('click', logScores);  
+submitBtn.addEventListener('click', logScores);
+
+window.addEventListener('DOMContentLoaded', function () {
+    updateHighScores();
+});
