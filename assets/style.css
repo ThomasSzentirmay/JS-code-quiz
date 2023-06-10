@@ -32,7 +32,7 @@ header #time-container {
   top: 0;
   right: 0;
   background-color: #ffffff;
-  padding: 10px;
+  padding: 15px 25px;
   border-radius: 25px 15px;
   font-size: 12px;
 }
@@ -41,7 +41,7 @@ header #time-container {
 
 body #highscores-container {
   position: absolute;
-  top: 30px;
+  top: 20px;
   left: 30px;
   padding: 15px 25px;
   background-color: #fff;

@@ -148,12 +148,13 @@ function checkAnswer(event) {
                 displayQuestion();
             } else {
                 console.log("Quiz completed!");
+                endGame();
             }
         }, 1000);
     } else {
         resultElement.textContent = "Wrong!";
-        if (timer > 90) {
-            timer -= 90;
+        if (timer > 5) {
+            timer -= 5;
         } else {
             timer = 0;
         }
@@ -175,7 +176,17 @@ function endGame() {
 
     var answerResultEl = document.getElementById('result');
     answerResultEl.style.display = 'none';
+
+    if (currentQuestionIndex === questions.length) {
+        questionElement.textContent = '';
+        choicesElement.innerHTML = '';
+    }
+
+    if (currentQuestionIndex === questions.length && timer > 0) {
+        timeSection.style.display = 'none';
+    }
 }
+
 
 function logScores() {
     var initialsInput = document.getElementById('initials').value.trim();
