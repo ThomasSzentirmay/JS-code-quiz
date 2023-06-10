@@ -37,6 +37,17 @@ header #time-container {
   font-size: 12px;
 }
 
+/* HIGH SCORES SECTION */
+
+body #highscores-container {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  padding: 15px 25px;
+  background-color: #fff;
+  border-radius: 15px 25px;
+}
+
 /* MAIN SECTION FLEX LAYOUT */
 
 main {
