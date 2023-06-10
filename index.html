@@ -1,60 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coding Quiz</title>
     <!-- LINKED TO STYLESHEET -->
-    <link rel="stylesheet" href="./assets/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
     <!-- HIGH SCORE SECTION -->
     <div id="highscores-container">
-        <h3>High Scores: </h3>
-        <ul id="highscores-list"></ul>
-      </div>
+      <h3>High Scores:</h3>
+      <ul id="highscores-list"></ul>
+    </div>
     <!-- MESSAGE SECTION -->
     <section id="message-container">
-        <h1>Welcome to the Coding Quiz!</h1>
-        <p>Answer 10 JavaScript questions within the time limit to win. <br>Watch out though...each wrong answer takes 5 seconds off!</p>
-        <button id="start">Start Game</button>
+      <h1>Welcome to the Coding Quiz!</h1>
+      <p>
+        Answer 10 JavaScript questions within the time limit to win. <br />Watch
+        out though...each wrong answer takes 5 seconds off!
+      </p>
+      <button id="start">Start Game</button>
     </section>
     <!-- END GAME MESSAGE -->
     <section id="end-game-message">
-        <h1></h1>
-        <p></p>
+      <h1></h1>
+      <p></p>
     </section>
     <!-- TIMER -->
     <header>
-        <section id="time-container">
-            <h2>Time Remaining:<br> <span id="timer">60</span> seconds</h2>
-        </section>
+      <section id="time-container">
+        <h2>
+          Time Remaining:<br />
+          <span id="timer">60</span> seconds
+        </h2>
+      </section>
     </header>
     <!-- MAIN QUIZ SECTION -->
     <main>
-        <!-- SECTION CONTAINER CONTAINING ALL INTERACTIVE ELEMENTS -->
-        <section id="quiz-container">
-            <!-- QUESTIONS & CHOICES -->
-            <section id="question-container">
-                <h2 id="question">Question: </h2>
-                <ul id="choices">
-                    <li><button class="choice">Choice 1</button></li>
-                    <li><button class="choice">Choice 2</button></li>
-                    <li><button class="choice">Choice 3</button></li>
-                    <li><button class="choice">Choice 4</button></li>
-                </ul>
-            </section>
+      <!-- SECTION CONTAINER CONTAINING ALL INTERACTIVE ELEMENTS -->
+      <section id="quiz-container">
+        <!-- QUESTIONS & CHOICES -->
+        <section id="question-container">
+          <h2 id="question">Question:</h2>
+          <ul id="choices">
+            <li><button class="choice">Choice 1</button></li>
+            <li><button class="choice">Choice 2</button></li>
+            <li><button class="choice">Choice 3</button></li>
+            <li><button class="choice">Choice 4</button></li>
+          </ul>
         </section>
-        <!-- RESULT -->
-        <section id="result-container">
-            <p id="result"></p>
-            <input type="text" id="initials" placeholder="Enter Your Initials">
-            <button id="submit">Submit</button>
-        </section>
+      </section>
+      <!-- RESULT -->
+      <section id="result-container">
+        <p id="result"></p>
+        <input type="text" id="initials" placeholder="Enter Your Initials" />
+        <button id="submit">Submit</button>
+      </section>
     </main>
 
     <!-- LINKED TO SCRIPT.JS -->
     <script src="./assets/script.js"></script>
-</body>
+  </body>
 </html>
