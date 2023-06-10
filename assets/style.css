@@ -90,6 +90,15 @@ main {
   display: none;
 }
 
+#initials {
+  margin-bottom: 25px;
+  font-size: 22px;
+}
+
+#submit {
+  padding: 10px 20px;
+}
+
 .show {
   display: block;
 }

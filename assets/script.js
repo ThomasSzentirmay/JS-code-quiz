@@ -112,6 +112,7 @@ function startGame() {
         } else {
             clearInterval(countdown);
             console.log("Time's up!");
+            endGame();
         }
     }, 1000);
     displayQuestion();
@@ -159,3 +160,21 @@ function checkAnswer(event) {
         timerElement.textContent = timer;
     }
 }
+
+function endGame() {
+
+    if (timer <= 0) {
+        quizContainer.style.display = 'none';
+        timeSection.style.display = 'none';
+    };
+
+    var initialInput = document.querySelector('input');
+    initialInput.style.display = 'block';
+
+    var submitBtn = document.querySelector('#submit');
+    submitBtn.style.display = 'block';
+
+    var answerResultEl = document.getElementById('result');
+    answerResultEl.style.display = 'none';
+
+};
