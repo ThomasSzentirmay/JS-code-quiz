@@ -220,6 +220,7 @@ function logScores() {
         console.log('Score logged successfully!');
 
         updateHighScores();
+        restartGame();
     } else {
         console.log('Please enter your initials!');
     }
@@ -248,3 +249,33 @@ submitBtn.addEventListener('click', logScores);
 window.addEventListener('DOMContentLoaded', function () {
     updateHighScores();
 });
+
+function restartGame() {
+    clearInterval(countdown);
+    currentQuestionIndex = 0;
+    timer = 90;
+    messageContainer.style.display = 'block';
+    quizContainer.style.display = 'none';
+    timeSection.style.display = 'none';
+    resultElement.textContent = '';
+    document.getElementById('initials').style.display = 'none';
+    document.getElementById('submit').style.display = 'none';
+    document.getElementById('end-game-message').style.display = 'none';
+    startBtn.style.display = 'block';
+    startBtn.addEventListener('click', startGame);
+    startBtn.textContent = 'Restart Game';
+
+    messageContainer.style.display = 'flex';
+    messageContainer.style.justifyContent = 'center';
+    messageContainer.style.alignItems = 'center';
+    quizContainer.style.justifyContent = 'center';
+    quizContainer.style.alignItems = 'center';
+
+    displayQuestion();
+}
+
+var submitBtn = document.getElementById('submit');
+submitBtn.addEventListener('click', logScores);
+
+var restartBtn = document.getElementById('restart');
+restartBtn.addEventListener('click', restartGame);
