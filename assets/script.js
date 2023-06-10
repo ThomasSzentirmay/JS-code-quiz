@@ -162,11 +162,10 @@ function checkAnswer(event) {
 }
 
 function endGame() {
-
     if (timer <= 0) {
         quizContainer.style.display = 'none';
         timeSection.style.display = 'none';
-    };
+    }
 
     var initialInput = document.querySelector('input');
     initialInput.style.display = 'block';
@@ -176,24 +175,20 @@ function endGame() {
 
     var answerResultEl = document.getElementById('result');
     answerResultEl.style.display = 'none';
-
-};
+}
 
 function logScores() {
-    var initialsInput = document.getElementById('initials').value.trim(); 
-    var correctAnswers = currentQuestionIndex; 
+    var initialsInput = document.getElementById('initials').value.trim();
+    var correctAnswers = currentQuestionIndex;
 
     if (initialsInput !== '') {
-
         var score = {
             initials: initialsInput,
             correctAnswers: correctAnswers
         };
 
         var scores = JSON.parse(localStorage.getItem('scores')) || [];
-
         scores.push(score);
-
         localStorage.setItem('scores', JSON.stringify(scores));
 
         document.getElementById('initials').value = '';
@@ -204,5 +199,21 @@ function logScores() {
     }
 }
 
+window.addEventListener('DOMContentLoaded', function () {
+    var highscoresList = document.getElementById('highscores-list');
+
+    var scores = JSON.parse(localStorage.getItem('scores')) || [];
+
+    scores.sort(function (a, b) {
+        return b.correctAnswers - a.correctAnswers;
+    });
+
+    scores.forEach(function (score) {
+        var listItem = document.createElement('li');
+        listItem.textContent = score.initials + ' - ' + score.correctAnswers + ' correct answers';
+        highscoresList.appendChild(listItem);
+    });
+});
+
 var submitBtn = document.getElementById('submit');
-submitBtn.addEventListener('click', logScores);
+submitBtn.addEventListener('click', logScores);  
