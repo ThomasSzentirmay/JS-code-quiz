@@ -86,6 +86,7 @@ var questions = [
     },
 ];
 
+// SETTING HTML ELEMENT ID'S TO VARIABLES TO USE
 var startBtn = document.querySelector("#start");
 var messageContainer = document.querySelector("#message-container");
 var quizContainer = document.querySelector("#quiz-container");
@@ -101,6 +102,7 @@ var correctAnswers = 0;
 
 timeSection.style.display = "none";
 
+// START GAME
 function startGame() {
     messageContainer.style.display = "none";
     document.querySelector("main").style.display = "flex";
@@ -126,6 +128,7 @@ function startGame() {
 
 startBtn.addEventListener("click", startGame);
 
+// QUESTION DISPLAY
 function displayQuestion() {
     var currentQuestion = questions[currentQuestionIndex];
     questionElement.textContent = currentQuestion.question;
@@ -142,6 +145,7 @@ function displayQuestion() {
     choicesElement.addEventListener("click", checkAnswer);
 }
 
+// CHECK ANSWER LOGIC
 function checkAnswer(event) {
     var selectedChoice = event.target.textContent;
     var currentQuestion = questions[currentQuestionIndex];
@@ -169,6 +173,7 @@ function checkAnswer(event) {
     }
 }
 
+// END GAME LOGIC
 function endGame() {
     if (timer <= 0) {
         quizContainer.style.display = 'none';
@@ -197,6 +202,7 @@ function endGame() {
     }
 }
 
+// END GAME MESSAGE
 function displayEndGameMessage(title, message) {
     var endGameSection = document.querySelector('#end-game-message');
     var titleElement = endGameSection.querySelector('h1');
@@ -208,6 +214,7 @@ function displayEndGameMessage(title, message) {
     endGameSection.style.display = 'block';
 }
 
+// LOCAL STORAGE WITH JSON
 function logScores() {
     var initialsInput = document.getElementById('initials').value.trim();
     var correctAnswers = currentQuestionIndex;
@@ -233,6 +240,7 @@ function logScores() {
     }
 }
 
+// UPDATING HIGH SCORE ARRAY
 function updateHighScores() {
     var highscoresList = document.getElementById('highscores-list');
     highscoresList.innerHTML = '';
